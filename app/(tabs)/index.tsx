@@ -1,4 +1,4 @@
-import "./globals.css";
+import "../globals.css";
 import cn from "clsx";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
