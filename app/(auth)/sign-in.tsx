@@ -1,21 +1,29 @@
 import {View, Text, Alert} from 'react-native'
 import React, {useState} from 'react'
-//import {useRouter} from 'expo-router'
 import CustomInput from "@/components/CustomInput";
 import CustomButton from "@/components/CustomButton";
 import {Link, router} from "expo-router";
+import {signIn} from "@/lib/appwrite";
 
 const SignIn = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [form, setForm] = useState({ email: '', password: '' });
 
     const submit = async() => {
-        if(!form.email || !form.password) return
-        Alert.alert('Error','Please fill all the fields');
+
+        const { email, password } = form;
+
+        if(!email || !password) {
+            Alert.alert('Error','Please fill all the fields');
+            return;
+        }
+
         setIsSubmitting(true);
 
         try {
             //Call the appwrite sign in function
+
+            await signIn({email, password})
 
             Alert.alert('Success','You are now signed in');
             router.replace('/')
