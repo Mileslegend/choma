@@ -2,17 +2,19 @@ import "../globals.css";
 import cn from "clsx";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
-  FlatList,
-  Image,
-  Pressable,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
+    Button,
+    FlatList,
+    Image,
+    Pressable,
+    ScrollView,
+    Text,
+    TouchableOpacity,
+    View,
 } from "react-native";
 import { images, offers } from "@/constants";
 import React, { Fragment } from "react";
 import CartButton from "@/components/CartButton";
+import * as Sentry from '@sentry/react-native';
 
 export default function App() {
   return (
@@ -79,6 +81,7 @@ export default function App() {
             <CartButton />
           </View>
         )}
+
       />
     </SafeAreaView>
   );
