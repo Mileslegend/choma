@@ -6,7 +6,13 @@ export const appwriteConfig = {
     platform: 'com.muhuan.choma',
     projectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID!,
     databaseId: '686f9b2400261bbadddc',
-    userCollectionId: '686f9b70002ca1ba3b94'
+    buckedId: '687775dc001f0fa7cdcc',
+    userCollectionId: '686f9b70002ca1ba3b94',
+    categoriesCollectionId: '6876a048003c610b70d1',
+    menuCollectionId: '6876a22d000bc333eb0f',
+    customizationsCollectionId: '6877703f000117df2837',
+    menuCustomizationsCollectionId: '687771e7002c97774ef6',
+
 }
 
 export const client = new Client()
